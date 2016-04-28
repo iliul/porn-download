@@ -1,0 +1,4 @@
+wget==3.2
+lxml==3.6.0
+requests==2.2.1
+beautifulsoup4==4.4.1
