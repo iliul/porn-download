@@ -47,7 +47,7 @@ Download options:
 # TODO
 - [x] add auto choice an chinese proxy
 - [x] add http proxy
-- [ ] add download progress bar
+- [x] add download progress bar
 - [ ] support more sites
 
 # References
