@@ -9,12 +9,8 @@ from contextlib import closing
 from urllib import request, parse
 
 proxies = {}
-
 __version__ ="V1.0.0"
 script_name = "porndl"
-URL = "http://email.91dizhi.at.gmail.com.9h4.space/view_video.php?viewkey=10dbdc2e848c104e5f3c"
-COOKIES = "-b language=cn_CN;watch_times=0"
-USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36"
 
 class ProgressBar(object):
     """
@@ -78,6 +74,9 @@ def pick_a_chinese_proxy():
             all_proxies.append(cur_proxy)
         except:
             pass
+
+    if not len(all_proxies):
+        raise AssertionError('No chinese proxy is valid，Please use -x or -s option instead!')
     return random.choice(all_proxies)
 
 def get_html(urls):
@@ -166,11 +165,12 @@ def parse_args(script_name, **kwargs):
     -a | --auto-proxy                   Auto choice an Chinese HTTP proxy.
     -c | --cookies <COOKIES_FILE>       Load cookies.txt or cookies.sqlite.
     -x | --http-proxy <HOST:PORT>       Use an HTTP proxy for downloading.
+    -x | --socks-proxy <HOST:PORT>      Use an SOCKS proxy for downloading.
     -d | --debug                        Show traceback and other debug info.
     '''
 
-    short_opts = 'Vhdac:o:x:'
-    opts = ['version', 'help', 'debug', 'auto-proxy', 'cookies=', 'output-dir=', 'http-proxy=']
+    short_opts = 'Vhdac:o:x:s:'
+    opts = ['version', 'help', 'debug', 'auto-proxy', 'cookies=', 'output-dir=', 'http-proxy=', 'socks-proxy=']
 
     # Get options and arguments.
     try:
@@ -205,6 +205,10 @@ def parse_args(script_name, **kwargs):
             output_dir = a
         elif o in ("-x", "--http-proxy"):
             proxies['http'] = 'http://' + a
+            #proxies['https'] = 'https://' + a
+        elif o in ("-s", "--socks-proxy"):
+            proxies['http'] = 'socks5://' + a
+            #proxies['https'] = 'socks5://' + a
         else:
             print("try 'porndl --help' for more options")
             sys.exit(2)
