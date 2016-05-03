@@ -205,10 +205,10 @@ def parse_args(script_name, **kwargs):
             output_dir = a
         elif o in ("-x", "--http-proxy"):
             proxies['http'] = 'http://' + a
-            #proxies['https'] = 'https://' + a
+            proxies['https'] = 'https://' + a
         elif o in ("-s", "--socks-proxy"):
             proxies['http'] = 'socks5://' + a
-            #proxies['https'] = 'socks5://' + a
+            proxies['https'] = 'socks5://' + a
         else:
             print("try 'porndl --help' for more options")
             sys.exit(2)
