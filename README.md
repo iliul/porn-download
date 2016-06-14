@@ -7,7 +7,6 @@
 
 ## Prerequisites
 
-* [Python3](https://www.python.org/downloads/)
 * [lxml](https://pypi.python.org/pypi/lxml/3.6.0)
 * [requests](https://pypi.python.org/pypi/requests/)
 * [beautifulsoup4](https://pypi.python.org/pypi/beautifulsoup4)
@@ -15,7 +14,8 @@
 ## Install via pip
 ```
 $ git clone git@github.com:iliul/porndl.git
-$ pip3 install -r requirements.txt
+$ cd porndl
+$ pip install -r requirements.txt
 ```
 
 ## Set a http proxy
@@ -25,7 +25,7 @@ $ python porndl.py -x 122.227.199.178:9999 http://email.91dizhi.at.gmail.com.9h4
 
 ## Set a socks proxy
 ```
-$ python porndl.py -s 192.168.8.125:1080 1 http://email.91dizhi.at.gmail.com.9h4.space/view_video.php?viewkey=10dbdc2e848c104e5f3c
+$ python porndl.py -s 192.168.8.125:1080 http://email.91dizhi.at.gmail.com.9h4.space/view_video.php?viewkey=10dbdc2e848c104e5f3c
 ```
 
 ## Auto-set proxy

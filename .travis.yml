@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.5-dev" # 3.5 development branch
+  - "nightly" # currently points to 3.6-dev
+# command to install dependencies
+install: "pip install -r requirements.txt"
+# command to run tests
+script: python porndl.py -a http://email.91dizhi.at.gmail.com.9h4.space/view_video.php?viewkey=10dbdc2e848c104e5f3c
