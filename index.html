@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Porndl by iliul</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Porndl</h1>
+      <h2 class="project-tagline">a tiny tools for download 91porn videos and support proxy mode</h2>
+      <a href="https://github.com/iliul/porndl" class="btn">View on GitHub</a>
+      <a href="https://github.com/iliul/porndl/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/iliul/porndl/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="porndl" class="anchor" href="#porndl" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Porndl</h1>
+
+<p><a href="https://travis-ci.org/iliul/porndl"><img src="https://travis-ci.org/iliul/porndl.svg?branch=dev" alt="Build Status"></a></p>
+
+<p><a href="https://github.com/iliul/porndl">Porndl</a> is a tiny command-line utility to download videos from the <strong>91porn  site</strong>(<g-emoji alias="underage" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f51e.png">🔞</g-emoji>).</p>
+
+<h1>
+<a id="getting-start" class="anchor" href="#getting-start" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Start</h1>
+
+<h2>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<ul>
+<li><a href="https://pypi.python.org/pypi/lxml/3.6.0">lxml</a></li>
+<li><a href="https://pypi.python.org/pypi/requests/">requests</a></li>
+<li><a href="https://pypi.python.org/pypi/beautifulsoup4">beautifulsoup4</a></li>
+</ul>
+
+<h2>
+<a id="install-via-pip" class="anchor" href="#install-via-pip" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install via pip</h2>
+
+<pre><code>$ git clone git@github.com:iliul/porndl.git
+$ cd porndl
+$ pip install -r requirements.txt
+</code></pre>
+
+<h2>
+<a id="set-a-http-proxy" class="anchor" href="#set-a-http-proxy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set a http proxy</h2>
+
+<pre><code>$ python porndl.py -x 122.227.199.178:9999 VIDEO-URL
+</code></pre>
+
+<h2>
+<a id="set-a-socks-proxy" class="anchor" href="#set-a-socks-proxy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Set a socks proxy</h2>
+
+<pre><code>$ python porndl.py -s 192.168.8.125:1080 VIDEO-URL
+</code></pre>
+
+<h2>
+<a id="auto-set-proxy" class="anchor" href="#auto-set-proxy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Auto-set proxy</h2>
+
+<pre><code>$ python porndl.py -a VIDEO-URL
+</code></pre>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<pre><code>(py3k) root@Ubuntu Server:~/code/porndl# python porndl.py VIDEO-URL
+【VIDEO-TITLE】     下载完成     42400.02 KB / 42400.02 KB
+</code></pre>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+
+<pre><code>Usage: porndl [OPTION]... [URL]...
+
+Startup options:
+    -V | --version                      Print version and exit.
+    -h | --help                         Print help and exit.
+
+Download options:
+    -o | --output-dir &lt;PATH&gt;            Set output directory.
+    -a | --auto-proxy                   Auto choice an Chinese HTTP proxy.
+    -c | --cookies &lt;COOKIES_FILE&gt;       Load cookies.txt or cookies.sqlite.
+    -x | --http-proxy &lt;HOST:PORT&gt;       Use an HTTP proxy for downloading.
+    -s | --socks-proxy &lt;HOST:PORT&gt;      Use an SOCKS proxy for downloading.
+    -d | --debug                        Show traceback and other debug info.
+</code></pre>
+
+<h1>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h1>
+
+<ul>
+<li>[x] support auto choice an chinese proxy</li>
+<li>[x] support http proxy</li>
+<li>[x] support socks proxy</li>
+<li>[x] support download progress bar</li>
+<li>[ ] support more sites</li>
+</ul>
+
+<h1>
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h1>
+
+<ol>
+<li>
+<strong>you-get</strong> -- <a href="https://github.com/soimort/you-get">https://github.com/soimort/you-get</a>
+</li>
+<li>
+<strong>proxy module</strong> -- <a href="https://github.com/soimort/you-get/pull/1063">https://github.com/soimort/you-get/pull/1063</a>
+</li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/iliul/porndl">Porndl</a> is maintained by <a href="https://github.com/iliul">iliul</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
