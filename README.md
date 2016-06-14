@@ -1,5 +1,6 @@
-
 # Porndl
+
+[![Build Status](https://travis-ci.org/iliul/porndl.svg?branch=dev)](https://travis-ci.org/iliul/porndl)
 
 [Porndl](https://github.com/iliul/porndl) is a tiny command-line utility to download videos from the **91porn  site**(:underage:).
 
@@ -7,30 +8,31 @@
 
 ## Prerequisites
 
-* [Python3](https://www.python.org/downloads/)
 * [lxml](https://pypi.python.org/pypi/lxml/3.6.0)
 * [requests](https://pypi.python.org/pypi/requests/)
 * [beautifulsoup4](https://pypi.python.org/pypi/beautifulsoup4)
 
 ## Install via pip
+
 ```
 $ git clone git@github.com:iliul/porndl.git
-$ pip3 install -r requirements.txt
+$ cd porndl
+$ pip install -r requirements.txt
 ```
 
 ## Set a http proxy
 ```
-$ python porndl.py -x 122.227.199.178:9999 http://email.91dizhi.at.gmail.com.9h4.space/view_video.php?viewkey=10dbdc2e848c104e5f3c
+$ python porndl.py -x 122.227.199.178:9999 VIDEO-URL
 ```
 
 ## Set a socks proxy
 ```
-$ python porndl.py -s 192.168.8.125:1080 1 http://email.91dizhi.at.gmail.com.9h4.space/view_video.php?viewkey=10dbdc2e848c104e5f3c
+$ python porndl.py -s 192.168.8.125:1080 VIDEO-URL
 ```
 
 ## Auto-set proxy
 ```
-$ python porndl.py -a http://email.91dizhi.at.gmail.com.9h4.space/view_video.php?viewkey=10dbdc2e848c104e5f3c
+$ python porndl.py -a VIDEO-URL
 ```
 
 ## Example

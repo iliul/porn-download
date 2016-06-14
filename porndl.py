@@ -68,8 +68,10 @@ def pick_a_chinese_proxy():
     all_proxies = []
     for row in soup.find_all('tr')[1:]:
         try:
-            ip = row.find_all('span', {'class' : 'row_proxy_ip'})[0].text.strip()
-            port = row.find_all('td')[1].text.strip()
+            ip = row.find_all('span')[0].text.strip() + row.find_all('span')[1].text.strip()
+            port = row.find_all('a')[0].text.strip()
+            if not port in ['80', '3128', '8080']:
+                continue
             cur_proxy = "{}:{}".format(ip, port)
             all_proxies.append(cur_proxy)
         except:
@@ -165,7 +167,7 @@ def parse_args(script_name, **kwargs):
     -a | --auto-proxy                   Auto choice an Chinese HTTP proxy.
     -c | --cookies <COOKIES_FILE>       Load cookies.txt or cookies.sqlite.
     -x | --http-proxy <HOST:PORT>       Use an HTTP proxy for downloading.
-    -x | --socks-proxy <HOST:PORT>      Use an SOCKS proxy for downloading.
+    -s | --socks-proxy <HOST:PORT>      Use an SOCKS proxy for downloading.
     -d | --debug                        Show traceback and other debug info.
     '''
 
